@@ -1,0 +1,3 @@
+[submodule "byteforce"]
+	path = byteforce
+	url = https://github.com/marinhoysmael/byteforce.git
