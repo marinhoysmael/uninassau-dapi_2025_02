@@ -1,0 +1,30 @@
+[submodule "byteforce"]
+	path = byteforce
+	url = https://github.com/marinhoysmael/byteforce.git
+[submodule "portaria404"]
+	path = portaria404
+	url = https://github.com/marinhoysmael/portaria404.git
+[submodule "theboys"]
+	path = theboys
+	url = https://github.com/marinhoysmael/theboys.git
+[submodule "sus2"]
+	path = sus2
+	url = https://github.com/marinhoysmael/sus2.git
+[submodule "codemasters"]
+	path = codemasters
+	url = https://github.com/marinhoysmael/codemasters.git
+[submodule "devtitans"]
+	path = devtitans
+	url = https://github.com/marinhoysmael/devtitans.git
+[submodule "squadnexus"]
+	path = squadnexus
+	url = https://github.com/marinhoysmael/squadnexus.git
+[submodule "codecore"]
+	path = codecore
+	url = https://github.com/marinhoysmael/codecore.git
+[submodule "osconectados"]
+	path = osconectados
+	url = https://github.com/marinhoysmael/osconectados.git
+[submodule "dev4pets"]
+	path = dev4pets
+	url = https://github.com/marinhoysmael/dev4pets.git
