@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aula 29/08/2025 - Exemplos</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+			background: #f9f9f9;
+		}
+
+		h2 {
+			color: #333;
+			margin-top: 40px;
+		}
+
+		form,
+		div.exemplo {
+			background: #fff;
+			padding: 15px;
+			margin: 10px 0;
+			border-radius: 8px;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		input,
+		button {
+			padding: 8px;
+			margin: 5px 0;
+		}
+
+		button {
+			cursor: pointer;
+		}
+
+		p.resultado {
+			font-weight: bold;
+			color: #006600;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Aula de JavaScript - Exemplos</h1>
+
+	<h2>1. Calculadora Simples</h2>
+	<form id="calc-form">
+		<input type="number" id="num1" placeholder="Número 1">
+		<input type="number" id="num2" placeholder="Número 2"><br>
+		<button type="button" onclick="somar()">Somar</button>
+		<button type="button" onclick="subtrair()">Subtrair</button>
+		<button type="button" onclick="multiplicar()">Multiplicar</button>
+		<button type="button" onclick="dividir()">Dividir</button>
+		<p id="resultado-calc" class="resultado"></p>
+	</form>
+
+	<h2>2. Validação de Login</h2>
+	<form id="login-form">
+		<input type="email" id="email" placeholder="Digite seu email"><br>
+		<input type="password" id="senha" placeholder="Digite sua senha"><br>
+		<button type="submit">Entrar</button>
+		<p id="mensagem-login" class="resultado"></p>
+	</form>
+
+	<h2>3. Verificação de Idade para Votação</h2>
+	<form id="idade-form">
+		<input type="number" id="idade" placeholder="Digite sua idade"><br>
+		<button type="submit">Verificar</button>
+		<p id="mensagem-idade" class="resultado"></p>
+	</form>
+
+	<h2>4. Desafio Final - Conversor de Temperatura</h2>
+	<form id="temp-form">
+		<input type="number" id="celsius" placeholder="Celsius"> °C
+		<button type="button" onclick="converterParaF()">Converter para Fahrenheit</button><br><br>
+		<input type="number" id="fahrenheit" placeholder="Fahrenheit"> °F
+		<button type="button" onclick="converterParaC()">Converter para Celsius</button>
+		<p id="resultado-temp" class="resultado"></p>
+	</form>
+
+	<script>
+		// --- Calculadora ---
+		function somar() {
+			let n1 = Number(document.getElementById("num1").value);
+			let n2 = Number(document.getElementById("num2").value);
+			document.getElementById("resultado-calc").textContent = "Resultado: " + (n1 + n2);
+		}
+		function subtrair() {
+			let n1 = Number(document.getElementById("num1").value);
+			let n2 = Number(document.getElementById("num2").value);
+			document.getElementById("resultado-calc").textContent = "Resultado: " + (n1 - n2);
+		}
+		function multiplicar() {
+			let n1 = Number(document.getElementById("num1").value);
+			let n2 = Number(document.getElementById("num2").value);
+			document.getElementById("resultado-calc").textContent = "Resultado: " + (n1 * n2);
+		}
+		function dividir() {
+			let n1 = Number(document.getElementById("num1").value);
+			let n2 = Number(document.getElementById("num2").value);
+			if (n2 === 0) {
+				document.getElementById("resultado-calc").textContent = "Não é possível dividir por zero.";
+			} else {
+				document.getElementById("resultado-calc").textContent = "Resultado: " + (n1 / n2);
+			}
+		}
+
+		// --- Login ---
+		document.getElementById("login-form").addEventListener("submit", function (event) {
+			event.preventDefault();
+			let senha = document.getElementById("senha").value;
+			if (senha.length < 6) {
+				document.getElementById("mensagem-login").textContent = "A senha deve ter pelo menos 6 caracteres.";
+			} else {
+				document.getElementById("mensagem-login").textContent = "Login realizado com sucesso!";
+			}
+		});
+
+		// --- Verificação de Idade ---
+		document.getElementById("idade-form").addEventListener("submit", function (event) {
+			event.preventDefault();
+			let idade = Number(document.getElementById("idade").value);
+			if (idade >= 16) {
+				document.getElementById("mensagem-idade").textContent = "Você pode votar.";
+			} else {
+				document.getElementById("mensagem-idade").textContent = "Você não pode votar.";
+			}
+		});
+
+		// --- Conversão de Temperatura ---
+		function converterParaF() {
+			let c = Number(document.getElementById("celsius").value);
+			let f = (c * 9 / 5) + 32;
+			document.getElementById("resultado-temp").textContent = c + " °C = " + f.toFixed(2) + " °F";
+		}
+		function converterParaC() {
+			let f = Number(document.getElementById("fahrenheit").value);
+			let c = (f - 32) * 5 / 9;
+			document.getElementById("resultado-temp").textContent = f + " °F = " + c.toFixed(2) + " °C";
+		}
+	</script>
+</body>
+
+</html>
