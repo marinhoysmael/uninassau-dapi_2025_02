@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bate-Papo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login" class="centered">
+    <h2>Entrar no Bate-Papo</h2>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="text" id="nickname" placeholder="Nickname" required>
+    <button onclick="enterChat()">Entrar</button>
+  </div>
+  <div id="chat" class="hidden">
+    <div class="chat-container">
+      <div class="users">
+        <h3>Pessoas na sala</h3>
+        <ul id="userList"></ul>
+      </div>
+      <div class="messages">
+        <h3>Mensagens</h3>
+        <div id="messages"></div>
+        <div class="send-box">
+          <input type="text" id="messageInput" placeholder="Digite sua mensagem...">
+          <button onclick="sendMessage()">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
