@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - My Chat</title>
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <!-- Área de mensagens -->
+            <div class="col-lg-8 d-flex flex-column align-items-stretch" style="height: 75vh;">
+                <div class="d-flex justify-content-end mb-2">
+                    <button id="logout-btn" class="btn btn-danger">Logoff</button>
+                </div>
+                <div class="card shadow flex-grow-1 mb-3" style="overflow-y: auto;">
+                    <div class="card-header bg-gradient bg-success text-white d-flex align-items-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2950/2950736.png" alt="Chat" width="32" class="me-2">
+                        <span class="fs-4">My Chat</span>
+                    </div>
+                    <div class="card-body" id="chat-messages" style="height: 50vh; overflow-y: auto; background: #f8f9fa;">
+                        <!-- Mensagens aparecerão aqui -->
+                        <div class="mb-2"><span class="badge bg-primary">Usuário 1</span> <span class="ms-2">Olá!</span></div>
+                        <div class="mb-2"><span class="badge bg-secondary">Usuário 2</span> <span class="ms-2">Oi, tudo bem?</span></div>
+                    </div>
+                </div>
+                <!-- Campo de texto para enviar mensagem -->
+                <form class="input-group shadow-sm" id="chat-form">
+                    <input type="text" class="form-control rounded-start-pill" placeholder="Digite sua mensagem..." id="chat-input">
+                    <button class="btn btn-primary rounded-end-pill" type="submit">Enviar</button>
+                </form>
+            </div>
+            <!-- Coluna de usuários online à direita -->
+            <div class="col-lg-4 mb-3 d-flex flex-column align-items-stretch">
+                <div class="card shadow h-100">
+                    <div class="card-header bg-gradient bg-primary text-white text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="Online" width="28" class="me-2">
+                        <span class="fs-5">Usuários Online</span>
+                    </div>
+                    <ul class="list-group list-group-flush" id="online-users">
+                        <li class="list-group-item d-flex align-items-center">
+                            <span class="badge bg-success me-2" style="width:10px;height:10px;border-radius:50%;"></span> Usuário 1
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <span class="badge bg-success me-2" style="width:10px;height:10px;border-radius:50%;"></span> Usuário 2
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <span class="badge bg-success me-2" style="width:10px;height:10px;border-radius:50%;"></span> Usuário 3
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="../index.js"></script>
+<script src="chat.js"></script>
+<script>
+
+</script>
+
+</html> 
