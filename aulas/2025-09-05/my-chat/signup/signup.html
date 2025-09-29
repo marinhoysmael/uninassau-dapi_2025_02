@@ -13,25 +13,30 @@
 </head>
 <body>
     <div class="login-container container">
-        <h1>Login to My Chat</h1>
+        <h1>New User to My Chat</h1>
         <form action="/login" method="POST">
             <div class="mb-3">
                 <label for="urlserver" class="form-label">URL do Servidor</label>
-                <input type="text" class="form-control"  id="urlserver" name="urlserver" required aria-describedby="urlHelp" value="localhost:3000">
+                <input type="text" class="form-control"  id="urlserver" name="urlserver" required aria-describedby="urlHelp">
                 <div id="urlHelp" class="form-text">Endereço do servidor</div>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required aria-describedby="emailHelp" >
+                <input type="email" class="form-control" id="email" name="username" required aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">Informar seu email principal</div>
             </div>
-            <button type="button" id="botaoEntrar" class="botao btn btn-primary bnt-entrar">Entrar</button>
-            <button type="button" id="botaoCadastrar" class="botao btn btn-success bnt-cadastrar">Cadastrar</button>
+            <div class="mb-3">
+                <label for="username" class="form-label">Nick Name:</label>
+                <input type="text" class="form-control" id="username" name="username" required aria-describedby="usernameHelp">
+                <div id="usernameHelp" class="form-text">Nome de usuário para exibição no chat</div>
+            </div>
+            <button type="button" id="botaoCadastrar" class="btn btn-primary bnt-entrar">Cadastrar</button>
+            <button type="button" id="botaoLogar" class="btn bnt-logar">Login</button>
             
         </form>
     </div>
 </body>
 
-<script src="login.js"></script>
+<script src="signup.js"></script>
 <script src="../index.js"></script>
 </html> 

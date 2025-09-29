@@ -1,42 +1,51 @@
 document.getElementById("botaoEntrar")
-.addEventListener("click", function() {
+    .addEventListener("click", function () {
 
-    const username = document.getElementById("username").value;
-    const email = document.getElementById("email").value;
-    const urlServer = document.getElementById("urlserver").value;
+        const email = document.getElementById("email").value;
+        const urlServer = document.getElementById("urlserver").value;
 
-    if(username && email && urlServer) {
+        if (email && urlServer) {
 
-        //criando o objeto com os dados do login JSON
-        const loginData = {
-            nickname: username,
-            email: email,
-        };
+            //criando o objeto com os dados do login JSON
+            const loginData = {
+                email: email,
+            };
 
-        //enviando os dados para o servidor
-        fetch("http://" +urlServer + "/enter",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(loginData)
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
+            
+            fetch("http://" + urlServer + "/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(loginData)
+            }).then(async response => {
+                if(response.ok) {
+                    alert("Usuario logado com sucesso!");
 
-            sessionStorage.setItem("username", username);
-            sessionStorage.setItem("email", email);
-            sessionStorage.setItem("urlServer", urlServer);
+                    const result = await response.json();
 
-            window.location.href = "/chat/chat.html";
+                    if (result) {
+                        sessionStorage.setItem("userId", result.id)
+                        sessionStorage.setItem("username", result.nickname);
+                        sessionStorage.setItem("email", email);
+                        sessionStorage.setItem("urlServer", urlServer);
+                    }
 
-            return response.json();
-        })
+                    window.location.href = "/chat/chat.html";
+                } else {
+
+                    const result = await response.json();
+                    console.error("Erro ao fazer login:", result);
+                    alert("Erro ao logar: " + result.error);
+                    return;
+                }
+            });
         
-    }
-    
-    
+        }
 
-});
+    });
+
+document.getElementById("botaoCadastrar")
+    .addEventListener("click", function () {
+        window.location.href = "/signup/signup.html";
+    });

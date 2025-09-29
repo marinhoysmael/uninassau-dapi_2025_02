@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = "/chat/chat.html";
         }
     } else {
-        if (window.location.pathname !== "/login/login.html") {
+        if (window.location.pathname !== "/login/login.html"
+            && window.location.pathname !== "/signup/signup.html"
+        ) {
             //PARA QUE SERVE O WINDOW?
             window.location.href = "/login/login.html";
         }
